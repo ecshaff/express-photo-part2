@@ -5,8 +5,10 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const mongoURI = process.env.MONGODB_URI
 const PORT = process.env.PORT
-const serveStatic = require('serve-static')
-const path = require('path')
+const serveStatic = require('serve-static');
+const path = require('path');
+const passport = require('passport');
+const { check, validationResult } = require('express-validator');
 require('dotenv').config();
 
 
@@ -17,10 +19,11 @@ mongoose.connection.once('open', function(){
         console.log('Error is: ', error);
     });
 
-app.use(methodOverride('_method'))
+app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }))
 app.use( bodyParser.json() );
 app.use( express.static ( 'public' ) );
+
 
 
 app.get('/', ( req, res )=>{
