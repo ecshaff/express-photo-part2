@@ -11,15 +11,8 @@
 </head>
 <body>
     
-    <header><h1 class="subtitle">By Emma Caroline.</h1>
-    <div class="sideNav">
-        <a href="/about">meet emmy</a>
-        <a href="/love">love</a>
-        <a href="/softportraits">soft portraits</a>
-        <a href="/landscapes">go outside</a>
-        <a href="/colour">colour</a>
-        <a href="/b+w">colourless</a>
-    </div>
+    <header>
+        <% include ../partials/sideNav.ejs %>
     </header>
     
     <div class="row"> 
@@ -106,31 +99,7 @@
   
  
 }
-.sideNav{
-    height: 100%;
-    width: 268px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: black;
-    overflow-x: hidden;
-    padding-top: 20px;
-    margin-top: 70px;
-    
 
-
-}
-.sideNav a{
-    display: block;
-    text-decoration: none;
-    color: white;
-    padding-left: 14px;
-}
-.sideNav a:hover{
-    text-decoration: none;
-    color: gray;
-}
 
 .subtitle{
     padding-top: 20px;
