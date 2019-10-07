@@ -4,6 +4,7 @@ const app = express();
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const mongoURI = process.env.MONGODB_URI
+const PORT = process.env.PORT
 const serveStatic = require('serve-static')
 const path = require('path')
 require('dotenv').config();
@@ -26,5 +27,6 @@ app.get('/', ( req, res )=>{
   res.render('./homepage/index.ejs');
 });
 
-app.listen(3000);
-console.log('app is listening..');
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode");
+});
