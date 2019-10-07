@@ -1,0 +1,29 @@
+<html>
+<head>
+    <link rel="icon" href="https://i.imgur.com/hSDwZMgs.jpg">
+    <title>By EmmaCaroline</title>
+</head>
+<body>
+    
+    <header>
+        <% include ../partials/sideNav.ejs %>
+    </header>
+    
+    <div class="row"> 
+      <form action="/signup" method="POST">
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="text" name="email" id="email" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" class="form-control">
+        </div>
+        <button type="submit">Sign Up</button>
+    </form>
+    </div>
+
+</body>
+</html>
+
+
