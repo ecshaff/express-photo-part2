@@ -30,6 +30,10 @@ app.get('/', ( req, res )=>{
   res.render('./homepage/index.ejs');
 });
 
+app.get('/signin', ( req, res )=>{
+  res.render('./users/signup.ejs');
+});
+
 app.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port %d in %s mode");
 });
