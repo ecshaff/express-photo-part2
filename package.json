@@ -9,6 +9,7 @@
   "author": "emmy",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "dotenv": "^8.1.0",
     "ejs": "^2.7.1",
@@ -17,6 +18,7 @@
     "method-override": "^3.0.0",
     "mongoose": "^5.7.3",
     "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "serve-static": "^1.14.1"
   }

@@ -30,8 +30,16 @@ app.get('/', ( req, res )=>{
   res.render('./homepage/index.ejs');
 });
 
-app.get('/signin', ( req, res )=>{
+app.get('/signup', ( req, res, next )=>{
   res.render('./users/signup.ejs');
+});
+
+app.post('/signup', passport.authenticate('local.signup', {
+	successRedirect
+}))
+
+app.get('/signin', ( req, res, next )=>{
+  res.render('./users/signin.ejs');
 });
 
 app.listen(process.env.PORT || 3000, function(){
