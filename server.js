@@ -9,8 +9,11 @@ const serveStatic = require('serve-static');
 const path = require('path');
 const passport = require('passport');
 const { check, validationResult } = require('express-validator');
-require('dotenv').config();
+const flash = require('connect-flash');
+const Photo = require('./models/photo');
 
+require('dotenv').config();
+require('./config/passport');
 
 mongoose.connect('mongodb://localhost:27017/photoapp', { useNewUrlParser: true }, );
 mongoose.connection.once('open', function(){
@@ -23,11 +26,21 @@ app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }))
 app.use( bodyParser.json() );
 app.use( express.static ( 'public' ) );
-
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
 
 
 app.get('/', ( req, res )=>{
   res.render('./homepage/index.ejs');
+});
+
+app.get('/love', ( req, res )=>{
+  res.render('./love/html.ejs');
+});
+
+app.get('/landscape', (req, res )=>{
+	res.render('./landscape/html.ejs')
 });
 
 app.get('/signup', ( req, res, next )=>{
@@ -35,7 +48,7 @@ app.get('/signup', ( req, res, next )=>{
 });
 
 app.post('/signup', passport.authenticate('local.signup', {
-	successRedirect
+	successRedirect: '/'
 }))
 
 app.get('/signin', ( req, res, next )=>{

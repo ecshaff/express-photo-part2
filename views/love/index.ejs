@@ -1,0 +1,105 @@
+<html>
+<link rel="stylesheet" type="text/css" href="index.css">
+<link href="https://fonts.googleapis.com/css?family=Karla|Merriweather&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+<head>
+    <link rel="icon" href="https://i.imgur.com/hSDwZMgs.jpg">
+    <title>Couples</title>
+</head>
+<body>
+    
+    <header>
+        <% include ../partials/sideNav.ejs %>
+    </header>
+    
+    <div class="row"> 
+  <div class="column">
+   <% for(let i = 0; i < photos[i].length; i++) {
+   %>
+   <img src="<%= photos[i].img %>"/>
+<% } %>
+  </div>
+  <div class="column">
+  
+  </div> 
+  <div class="column">
+
+    </div>
+</div>
+
+<footer> <% include ../partials/footer.ejs %> </footer>
+</body>
+</html>
+
+
+<style type="text/css">
+    .column {
+    flex: 20%;
+  
+  
+}
+
+
+.column img {
+  
+    vertical-align: middle;
+    width: 100%;
+    border: 6px solid black;
+  
+
+  
+}
+
+.main_link{
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-family: 'Lexend Giga', sans-serif;
+}
+.main_link:hover{
+    border:5px solid white;
+}
+.name{
+    margin-bottom: -15px;
+}
+.photoBody{
+    background: url(https://i.imgur.com/H3REAUM.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.row {
+    margin-top: 8px;
+    padding-top: 62px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 283px;
+  
+ 
+}
+
+
+.subtitle{
+    padding-top: 20px;
+    font-size: 30px;
+    font-family: 'Karla', sans-serif;
+    text-transform: lowercase;
+    padding-left: 14px;
+    position: fixed;
+
+}
+
+.title{
+    padding-top: 60px;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Cedarville Cursive', cursive;
+
+}
+
+
+</style>
