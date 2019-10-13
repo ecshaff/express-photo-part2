@@ -51,6 +51,10 @@ app.get('/colour', (req, res)=>{
 	res.render('./color/html.ejs')
 });
 
+app.get('/about', (req, res)=>{
+	res.render('./me/html.ejs')
+});
+
 app.get('/signup', ( req, res, next )=>{
   res.render('./users/signup.ejs');
 });
