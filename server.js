@@ -43,6 +43,14 @@ app.get('/landscape', (req, res )=>{
 	res.render('./landscape/html.ejs')
 });
 
+app.get('/bw', (req, res)=>{
+	res.render('./bw/html.ejs')
+});
+
+app.get('/colour', (req, res)=>{
+	res.render('./color/html.ejs')
+});
+
 app.get('/signup', ( req, res, next )=>{
   res.render('./users/signup.ejs');
 });
